@@ -1,11 +1,12 @@
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    padding: 6px 2px;
     background-color: #942a2a;
     border-radius: 12px;
     transition: all .5s;
@@ -17,17 +18,31 @@
 }
 
 .title {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     font-weight: 900;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #070;
+    border-bottom: 1px solid #000;
 }
 
 .image {
     width: 80px;
-    height: 20px;
+    height: 60px;
     background-color: #57031e;
 }
 
 .price {
+    width: 80%;
+    height: 20px;
     color: #ddd;
+    text-align: center;
     font-weight: 600;
+    background-color: #70f;
 }

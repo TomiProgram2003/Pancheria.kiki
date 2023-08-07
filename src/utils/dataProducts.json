@@ -1,0 +1,23 @@
+{
+  "products" : [
+    {
+      "id": 0,
+      "name" : "Pancho",
+      "price": 300,
+      "image": "/images/pancho.png"
+    },
+    {
+      "id": 1,
+      "name" : "Sanguchito de miga",
+      "price": 400,
+      "image": "/images/sndwch_miga.jpeg"
+    },
+    {
+      "id": 2,
+      "name" : "Sanguche de milanesa",
+      "price": 1500,
+      "image": "/images/sndwch_milanesa.jpeg"
+    }
+  ]
+}
+
