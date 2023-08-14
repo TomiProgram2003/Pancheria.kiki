@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 
 import styles from './ProductsList.module.css'
 
-const ProductsList = () => {
+const ProductsList = ({ addProductToOrder }) => {
 
   const [products, setProducts] = useState([])
 
@@ -29,6 +29,7 @@ const ProductsList = () => {
             <ProductCard
               key={product.id}
               product={product}
+              addProductToOrder={addProductToOrder}
             />
           )
         )

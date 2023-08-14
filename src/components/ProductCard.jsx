@@ -1,14 +1,21 @@
 
 import styles from './ProductCard.module.css'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, addProductToOrder }) => {
 
   const getImageUrl = (imagePath) => {
     return new URL(imagePath, import.meta.url).href
   }
 
+  const handleClick = () => {
+    addProductToOrder(product)
+  }
+
   return (
-    <li className={styles.card}>
+    <li
+      className={styles.card}
+      onClick={handleClick}
+    >
       <h2 className={styles.title}>
         {product.name}
       </h2>

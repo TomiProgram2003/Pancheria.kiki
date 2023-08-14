@@ -6,4 +6,5 @@
     padding: 20px;
     border-radius: 12px;
     background: linear-gradient(45deg, #ff0000, #ff6a00);
+    z-index: 1;
 }
