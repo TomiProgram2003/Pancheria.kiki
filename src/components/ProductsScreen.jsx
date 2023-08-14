@@ -1,15 +1,25 @@
 
-import { useState } from 'react'
+import { useEffect } from 'react'
 
 import ActuallyOrder from './ActuallyOrder'
 import ProductsList from './ProductsList'
 
 import styles from './ProductsScreen.module.css'
+import { useOrderContext } from '../hooks/useOrderContext'
 
 
 const ProductsScreen = () => {
 
-    const [order, setOrder] = useState(false)
+    const {
+      order,
+      setOrder,
+      orderInProcess,
+      setOrderInProcess,
+    } = useOrderContext()
+
+    useEffect(() => {
+        if (!orderInProcess) setOrder([])
+    }, [orderInProcess])
 
     const addProductToOrder = (product) => {
         const newOrderProduct = {
@@ -19,7 +29,7 @@ const ProductsScreen = () => {
             quantity: 1
         }
 
-        if (order) {
+        if (orderInProcess) {
             let updatedOrderProduct = false
             const newOrder = order.map(orderProduct => {
                 if (orderProduct.id == product.id) {
@@ -32,7 +42,10 @@ const ProductsScreen = () => {
             if (!updatedOrderProduct) newOrder.push(newOrderProduct)
             setOrder(newOrder)
             
-        } else setOrder([newOrderProduct])
+        } else {
+            setOrder([newOrderProduct])
+            setOrderInProcess(true)
+        }
     }
     
 
@@ -41,10 +54,7 @@ const ProductsScreen = () => {
             <ProductsList 
                 addProductToOrder={addProductToOrder}
             />
-            <ActuallyOrder 
-                order={order}
-                setOrder={setOrder}
-            />
+            <ActuallyOrder />
         </section>
     )
 }

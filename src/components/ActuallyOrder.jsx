@@ -1,36 +1,33 @@
 
-import { useEffect, useReducer, useState } from 'react'
 import styles from './ActuallyOrder.module.css'
+import { useOrderContext } from '../hooks/useOrderContext'
 
-const ActuallyOrder = ({ order, setOrder }) => {
+const ActuallyOrder = () => {
   
-  const [totalPrice, setTotalPrice] = useState(0)
+  const {
+    order,
+    orderInProcess,
+    setOrderInProcess,
+    orderConfirm,
+  } = useOrderContext()
 
-  useEffect(() => {
-    if (order) {
-      const total = order
-        .map(product => product.price * product.quantity)
-        .reduce((accumulator, currentValue) => accumulator + currentValue)
-      setTotalPrice(total)
-
-    } else setTotalPrice(0)
-  }, [order])
 
   const cancelOrder = () => {
     console.log('CANCEL order')
-    setOrder(false)
+    setOrderInProcess(false)
   }
 
   const confirmOrder = () => {
     console.log('CONFIRM order')
-    
+    orderConfirm(order)
+    setOrderInProcess(false)
   }
 
   return (
-    <article className={`${styles.order} ${order ? styles.active : null}`}>
+    <article className={`${styles.order} ${orderInProcess ? styles.active : null}`}>
       <ul className={styles.list}>
         {
-          order ? (
+          orderInProcess ? (
             order.map(orderProduct => (
               <li key={orderProduct.id}>
                 <span className={styles.productName}>{orderProduct.name}</span>
@@ -41,7 +38,13 @@ const ActuallyOrder = ({ order, setOrder }) => {
             ))
           ) : null
         }
-        <li>TOTAL: {totalPrice}</li>
+        <li>
+          TOTAL: {
+            order.length && order
+              .map(product => product.price * product.quantity)
+              .reduce((accumulator, currentValue) => accumulator + currentValue)
+            }
+        </li>
       </ul>
 
       <button
