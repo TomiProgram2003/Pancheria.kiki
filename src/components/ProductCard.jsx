@@ -1,14 +1,18 @@
 
 import styles from './ProductCard.module.css'
+import { useAppContext } from '../hooks/useAppContext'
+import { addProduct } from '../controllers/ordersController'
 
-const ProductCard = ({ product, addProductToOrder }) => {
+const ProductCard = ({ product }) => {
+
+  const { order, setOrder } = useAppContext()
 
   const getImageUrl = (imagePath) => {
     return new URL(imagePath, import.meta.url).href
   }
 
   const handleClick = () => {
-    addProductToOrder(product)
+    setOrder(addProduct(product, order))
   }
 
   return (
@@ -22,7 +26,7 @@ const ProductCard = ({ product, addProductToOrder }) => {
       <img
         className={styles.image}
         src={getImageUrl(product.image)}
-      ></img>
+      />
       <h3 className={styles.price}>
         ${product.price}
       </h3>

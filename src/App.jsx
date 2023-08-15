@@ -1,19 +1,23 @@
 
 import styles from './App.module.css'
-import { OrderProvider } from './providers/OrderProvider'
+import { AppContextProvider } from './providers/AppContextProvider'
 import ProductsScreen from './components/ProductsScreen'
 import SalesRegister from './components/SalesRegister'
 
+
 function App() {
+
   return (
-    <OrderProvider>
+    <AppContextProvider>
       <header></header>
+
       <main className={styles.main}>
         <ProductsScreen />
         <SalesRegister />
       </main>
+
       <footer></footer>
-    </OrderProvider>
+    </AppContextProvider>
   )
 }
 

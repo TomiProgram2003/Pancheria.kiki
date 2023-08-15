@@ -1,33 +1,33 @@
 
 import styles from './ActuallyOrder.module.css'
-import { useOrderContext } from '../hooks/useOrderContext'
+import { useAppContext } from '../hooks/useAppContext'
+import { addSale } from '../controllers/salesController'
 
 const ActuallyOrder = () => {
   
   const {
     order,
-    orderInProcess,
-    setOrderInProcess,
-    orderConfirm,
-  } = useOrderContext()
+    setOrder,
+    setSales,
+  } = useAppContext()
 
 
   const cancelOrder = () => {
     console.log('CANCEL order')
-    setOrderInProcess(false)
+    setOrder([])
   }
 
   const confirmOrder = () => {
     console.log('CONFIRM order')
-    orderConfirm(order)
-    setOrderInProcess(false)
+    setSales(addSale(order))
+    setOrder([])
   }
 
   return (
-    <article className={`${styles.order} ${orderInProcess ? styles.active : null}`}>
+    <article className={`${styles.order} ${order.length ? styles.active : null}`}>
       <ul className={styles.list}>
         {
-          orderInProcess ? (
+          order.length ? (
             order.map(orderProduct => (
               <li key={orderProduct.id}>
                 <span className={styles.productName}>{orderProduct.name}</span>

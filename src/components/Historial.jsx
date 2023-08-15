@@ -1,13 +1,11 @@
 
-import { useOrderContext } from '../hooks/useOrderContext'
+import { useAppContext } from '../hooks/useAppContext'
 import styles from './Historial.module.css'
 import SaleItem from './SaleItem'
 
 const Historial = () => {
 
-  const { sales } = useOrderContext()
-  console.log(sales)
-
+  const { sales } = useAppContext()
 
   return (
     <div className={styles.historial}>
@@ -17,13 +15,12 @@ const Historial = () => {
           sales.length > 0 ? (
             sales.map((sale, index) => (    
               <SaleItem
-                key={index}
-                index={index}
+                key={sale.id}
+                index={index+1}
                 sale={sale}
               />
             ))
           ) : null
-            
         }
       </div>
     </div>

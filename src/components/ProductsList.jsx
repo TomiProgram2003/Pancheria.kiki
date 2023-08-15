@@ -1,10 +1,11 @@
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 
 import styles from './ProductsList.module.css'
 
-const ProductsList = ({ addProductToOrder }) => {
+
+const ProductsList = () => {
 
   const [products, setProducts] = useState([])
 
@@ -29,7 +30,6 @@ const ProductsList = ({ addProductToOrder }) => {
             <ProductCard
               key={product.id}
               product={product}
-              addProductToOrder={addProductToOrder}
             />
           )
         )

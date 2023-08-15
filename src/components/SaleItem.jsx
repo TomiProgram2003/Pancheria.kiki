@@ -1,9 +1,9 @@
 
 import styles from './SaleItem.module.css'
 
-const SaleItem = ({ index, sale }) => {
+const SaleItem = ({ sale, index }) => {
 
-  const money = sale
+  const money = sale.order
     .map(product => product.price * product.quantity)
     .reduce((accumulator, currentValue) => accumulator + currentValue)
 
