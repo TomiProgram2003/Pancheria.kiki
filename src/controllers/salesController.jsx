@@ -9,6 +9,8 @@ export const setSalesLS = (salesList) => localStorage.setItem('sales', JSON.stri
 export const getSalesLS = () => JSON.parse(localStorage.getItem('sales'))
 
 
+
+
 // add sales in local storage
 export const addSaleLS = (sale) => {
   const salesList = getSalesLS()

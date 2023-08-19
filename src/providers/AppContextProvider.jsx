@@ -8,6 +8,7 @@ export const AppContextProvider = ({ children }) => {
 
   const [order, setOrder] = useState([])
   const [sales, setSales] = useState(getSalesLS() || [])
+  const [saleInfoID, setSaleInfoID] = useState(null)
   
   return (
     <AppContext.Provider
@@ -17,6 +18,8 @@ export const AppContextProvider = ({ children }) => {
           setOrder,
           sales,
           setSales,
+          saleInfoID,
+          setSaleInfoID
         }
       }
     >
