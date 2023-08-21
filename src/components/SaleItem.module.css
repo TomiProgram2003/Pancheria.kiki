@@ -1,4 +1,8 @@
 
+.sale {
+  margin-bottom: 10px;
+}
+
 .sale > * {
   pointer-events: none;
 }

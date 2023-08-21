@@ -23,3 +23,12 @@ export const addProduct = (product, order) => {
   return newOrder
 }
 
+
+// calculate order total price
+export const calculateOrderPrice = (order) => {
+  let total = 0
+  order.forEach(product => {
+    total += product.price * product.quantity
+  })
+  return total
+}

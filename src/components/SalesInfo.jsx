@@ -4,6 +4,7 @@ import { useAppContext } from '../hooks/useAppContext'
 import styles from './SalesInfo.module.css'
 import { getSalesLS } from '../controllers/salesController'
 import ProductInfo from './ProductInfo'
+import { calculateOrderPrice } from '../controllers/ordersController'
 
 const SalesInfo = () => {
 
@@ -28,12 +29,22 @@ const SalesInfo = () => {
       <button onClick={() => setSaleInfoID(null)}>
         X
       </button>
+
+      <br />
+      <br />
+      
       <div className={styles.container}>
         {
           orderData ? (
             orderData.map((product, i) => (
               <ProductInfo key={i} product={product} />
             ))
+          ) : null
+        }
+        <br />
+        {
+          orderData ? (
+            <p>TOTAL: $ {calculateOrderPrice(orderData)}</p>
           ) : null
         }
       </div>

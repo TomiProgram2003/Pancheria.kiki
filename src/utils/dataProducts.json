@@ -8,15 +8,93 @@
     },
     {
       "id": 1,
-      "name" : "Sanguchito de miga",
+      "name" : "Pancho + Bebida",
+      "price": 500,
+      "image": "/images/pancho.png"
+    },
+    {
+      "id": 2,
+      "name" : "Sdwch Milanesa",
+      "price": 1500,
+      "image": "/images/sndwch_milanesa.jpeg"
+    },
+    {
+      "id": 3,
+      "name" : "Sdwch Milanesa + Bebida",
+      "price": 1700,
+      "image": "/images/sndwch_milanesa.jpeg"
+    },
+    {
+      "id": 4,
+      "name" : "Sdwch miga",
       "price": 400,
       "image": "/images/sndwch_miga.jpeg"
     },
     {
-      "id": 2,
-      "name" : "Sanguche de milanesa",
-      "price": 1500,
-      "image": "/images/sndwch_milanesa.jpeg"
+      "id": 5,
+      "name" : "Sdwch miga (6)",
+      "price": 1800,
+      "image": "/images/sndwch_miga.jpeg"
+    },
+    {
+      "id": 6,
+      "name" : "Sdwch miga (12)",
+      "price": 3300,
+      "image": "/images/sndwch_miga.jpeg"
+    },
+    {
+      "id": 7,
+      "name" : "Guaymallén",
+      "price": 100,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 8,
+      "name" : "2 Guaymallén + Bebida",
+      "price": 350,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 9,
+      "name" : "Manaos (600ml)",
+      "price": 300,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 10,
+      "name" : "Manaos (2L)",
+      "price": 400,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 11,
+      "name" : "Jugo Sierra (500ml)",
+      "price": 250,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 12,
+      "name" : "Bagio (200cc)",
+      "price": 250,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 13,
+      "name" : "Cerveza Palermo (Lata)",
+      "price": 450,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 14,
+      "name" : "Cerveza Brhama (Lata)",
+      "price": 500,
+      "image": "/images/dolar.png"
+    },
+    {
+      "id": 15,
+      "name" : "Coca Cola (2L)",
+      "price": 900,
+      "image": "/images/dolar.png"
     }
   ]
 }
